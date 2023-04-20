@@ -44,11 +44,18 @@ Ver classe Time.java nos arquivos
 #### 6. Modifique o método “abreContaSimples” da classe “ContaBancariaSimplificada” de forma que o cliente só possa abrir uma conta com um valor mínimo de R$ 100,00.
 
 ##### Resposta:
+
+O metodo abreContaSimples, para satisfazer esse novo requisito, deve ser da seguinte forma:
+
 ```java
-void abreContaSimples(String nome){
-    nomeDoCorrentista = nome;
-    saldo = 100.0;
-    contaÉEspecial = false;
+void abreContaSimples(String nome, int valorInicial){
+    if(valorInical>100){
+        nomeDoCorrentista = nome;
+        saldo = valorInicial;
+        contaÉEspecial = false;
+    } else{
+        System.out.println("Você está tentando criar uma conta com um valor inicial R$ " + valorInicial + "que está abaixo do mínimo de R$ 100.00 permitido");
+    }
 } 
 ```
 
